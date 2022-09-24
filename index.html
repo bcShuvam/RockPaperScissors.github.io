@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <section class="section section-header">
+            <p class="player">Player name :</p> 
+            <input type="text" class="player-name" maxlength="8">
+            <button class="btn btn--check">&#10003;</button>
+            <p class="welcome hidden">Welcome to <br><span> Rock&#129704; Paper&#128240; Scissors&#9986; </span></p>
+            <button class="btn--start hidden">Start</button>
+            <div class="count-down hidden"></div>
+        </section>
+        <section class="section section-main">
+            <div class="vs hidden">VS</div>
+            <div class="line hidden"></div>
+            <div class="user">
+                <p class="player0 hidden"> Player 1</p>
+                <span class="playername playername0 hidden"></span>
+                <span class="display-move display-player"></span>
+            </div>
+            <div class="ai">
+                <p class="player1 hidden"> Player 2</p>
+                <span class="playername playername1 hidden">Bot</span>
+                <span class="display-move display-bot"></span>
+            </div>
+                <!-- <span class="display-move display-player">&#128462;</span>
+                <span class="display-move display-player">&#9986;</span> -->
+        </section>
+        <section class="section section-footer">
+            
+            <ul class="ul hidden">
+                <li class="options"><button class="btns btns0">&#129704;</button></li>
+                <li class="options"><button  class="btns btns1">&#128240;</button></li>
+                <li class="options"><button  class="btns btns2">&#9986;</button></li>
+            </ul>
+            <p class="winner hidden"></p>
+            <img class="gif hidden" src="https://c.tenor.com/906nGAL7Xw0AAAAi/mochi-peachcat-cute-cat.gif" alt="celebration">
+            <button class="btn--reset hidden">Reset</button>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
