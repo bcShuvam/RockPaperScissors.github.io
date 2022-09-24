@@ -35,7 +35,6 @@ async function test() {
         if(i===0){
             document.querySelector('.count-down').textContent = 'Show';
         }
-        waitleft = i;
     }    
 }
 
