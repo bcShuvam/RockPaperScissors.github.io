@@ -5,7 +5,7 @@ let sec = date.getSeconds();
 let btnclicked;
 let isgameover = false;
 let botmove;
-let winner = 'Annee';
+let winner = '';
 let player = document.querySelector('.playername0').innerHTML;
 let bot = document.querySelector('.playername1').innerHTML;
 const movesAvailable = ['&#129704;','&#128240;','&#9986;'];
@@ -25,17 +25,17 @@ function delay(time) {
 async function test() {
     for(let i = 3; i > -1; i--){
         await delay(1000);
-        if(i===0){
-            document.querySelector('.count-down').textContent = 'Show';
-        }
-        if(i===1){
-            document.querySelector('.count-down').textContent = '✂';
+        if(i===3){
+            document.querySelector('.count-down').textContent = '🪨';
         }
         if(i===2){
             document.querySelector('.count-down').textContent = '📰';
         }
-        if(i===3){
-            document.querySelector('.count-down').textContent = '🪨';
+        if(i===1){
+            document.querySelector('.count-down').textContent = '✂';
+        }
+        if(i===0){
+            document.querySelector('.count-down').textContent = 'Show';
         }
     }
     
@@ -63,6 +63,11 @@ const startGame = document.querySelector('.btn--start').addEventListener('click'
     document.querySelector('.count-down').classList.remove('hidden');
     document.querySelector('.ul').classList.remove('hidden');
     document.querySelector('.btn--start').classList.add('hidden');
+    document.querySelector('.line').classList.remove('hidden');
+    document.querySelector('.playername0').classList.remove('hidden');
+    document.querySelector('.playername1').classList.remove('hidden');
+    document.querySelector('.vs').classList.remove('hidden');
+    document.querySelector('.count-down').classList.remove('hidden');
 
     test();
     // document.querySelector('.count-down').textContent = 'Show';
@@ -184,13 +189,13 @@ const reset = document.querySelector('.btn--reset').addEventListener('click',fun
     document.querySelector('.playername1').classList.add('hidden');
     document.querySelector('.vs').classList.add('hidden');
     document.querySelector('.count-down').classList.add('hidden');
-    document.querySelector('.btn--start').classList.add('hidden');
-    document.querySelector('.welcome').classList.add('hidden');
+    document.querySelector('.btn--start').classList.remove('hidden');
+    // document.querySelector('.welcome').classList.add('hidden');
 
-    document.querySelector('.player').classList.remove('hidden');
-    document.querySelector('.player-name').classList.remove('hidden');
-    document.querySelector('.btn--check').classList.remove('hidden');
-    document.querySelector('.player-name').value = '';
+    // document.querySelector('.player').classList.remove('hidden');
+    // document.querySelector('.player-name').classList.remove('hidden');
+    // document.querySelector('.btn--check').classList.remove('hidden');
+    // document.querySelector('.player-name').value = '';
     classbBtns1.disabled = false;
     classbBtns2.disabled = false;
     classbBtns0.disabled = false;
