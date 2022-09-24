@@ -1,7 +1,5 @@
 'use strict';
 
-const date = new Date();
-let sec = date.getSeconds();
 let btnclicked;
 let isgameover = false;
 let botmove;
@@ -37,8 +35,26 @@ async function test() {
         if(i===0){
             document.querySelector('.count-down').textContent = 'Show';
         }
+        waitleft = i;
+    }    
+}
+
+function display(){
+    if(botmove===0){
+        displayMoveBot.textContent = '🪨';
     }
-    
+    else if(botmove===1){
+        displayMoveBot.textContent = '📰';
+    }
+    else{
+        displayMoveBot.textContent = '✂';
+    }
+
+    displayMoves.classList.remove('hidden');
+    gif.classList.remove('hidden');
+    document.querySelector('.winner').classList.remove('hidden');
+    document.querySelector('.winner').innerHTML = `${winner}`;
+    document.querySelector('.btn--reset').classList.remove('hidden');
 }
 
 const playerName = document.querySelector('.btn--check').addEventListener('click',function(){
@@ -74,7 +90,7 @@ const startGame = document.querySelector('.btn--start').addEventListener('click'
 })
 
 //////////////////////////// Getting Clicked button Index //////////////////////////
-const btns0 = classbBtns0.addEventListener('click',function(){
+const btns0 = classbBtns0.addEventListener('click',function(){    
     btnclicked = 0;
     checkWinner();
     classbBtns0.classList.add('clicked');
@@ -86,24 +102,12 @@ const btns0 = classbBtns0.addEventListener('click',function(){
     displayMovePlayer.classList.remove('hidden');
 
     displayMovePlayer.textContent = `🪨`;
-    if(botmove===0){
-        displayMoveBot.textContent = '🪨';
-    }
-    else if(botmove===1){
-        displayMoveBot.textContent = '📰';
-    }
-    else{
-        displayMoveBot.textContent = '✂';
-    }
-    displayMoves.classList.remove('hidden');
-    gif.classList.remove('hidden');
-    document.querySelector('.winner').classList.remove('hidden');
-    document.querySelector('.winner').classList.remove('hidden');
-    document.querySelector('.winner').innerHTML = `${winner}`;
-    document.querySelector('.btn--reset').classList.remove('hidden');
+    display();
 });
 
+
 const btns1 = classbBtns1.addEventListener('click',function(){
+
     btnclicked = 1;
     checkWinner();
     classbBtns1.classList.add('clicked');
@@ -115,23 +119,11 @@ const btns1 = classbBtns1.addEventListener('click',function(){
     displayMovePlayer.classList.remove('hidden');
 
     displayMovePlayer.textContent = `📰`;
-    if(botmove===0){
-        displayMoveBot.textContent = '🪨';
-    }
-    else if(botmove===1){
-        displayMoveBot.textContent = '📰';
-    }
-    else{
-        displayMoveBot.textContent = '✂';
-    }
-    displayMoves.classList.remove('hidden');
-    gif.classList.remove('hidden');
-    document.querySelector('.winner').classList.remove('hidden');
-    document.querySelector('.winner').innerHTML = `${winner}`;
-    document.querySelector('.btn--reset').classList.remove('hidden');
+    display();
 });
 
 const btns2 = classbBtns2.addEventListener('click',function(){
+
     btnclicked = 2;
     checkWinner();
     classbBtns2.classList.add('clicked');
@@ -143,20 +135,7 @@ const btns2 = classbBtns2.addEventListener('click',function(){
     displayMovePlayer.classList.remove('hidden');
 
     displayMovePlayer.textContent = `✂`;
-    if(botmove===0){
-        displayMoveBot.textContent = '🪨';
-    }
-    else if(botmove===1){
-        displayMoveBot.textContent = '📰';
-    }
-    else{
-        displayMoveBot.textContent = '✂';
-    }
-    displayMoves.classList.remove('hidden');
-    gif.classList.remove('hidden');
-    document.querySelector('.winner').classList.remove('hidden');
-    document.querySelector('.winner').innerHTML = `${winner}`;
-    document.querySelector('.btn--reset').classList.remove('hidden');
+    display();
 });
 
 ////////////////////////////////////////// winning conditions //////////////////////////////////////////
